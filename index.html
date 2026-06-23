@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="theme-color" content="#FFE4ED">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <title>Hello Kitty Timer 🎀</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="app">
+        <!-- Header -->
+        <h1 class="title">🎀 Focus Timer 🎀</h1>
+
+        <!-- Timer Display -->
+        <div class="timer-container">
+            <!-- Activity scene elements -->
+            <div class="scene-elements" id="sceneElements"></div>
+
+            <!-- SVG Progress Ring -->
+            <svg class="progress-ring" viewBox="0 0 260 260">
+                <circle class="progress-ring__bg" cx="130" cy="130" r="120" />
+                <circle class="progress-ring__circle" id="progressCircle" cx="130" cy="130" r="120" />
+            </svg>
+
+            <!-- Hello Kitty Image Placeholder -->
+            <div class="character-container" id="character">
+                <img src="" alt="Hello Kitty" class="character-img" id="characterImg"
+                     onerror="this.style.display='none'; document.getElementById('characterPlaceholder').style.display='flex';">
+                <div class="character-placeholder" id="characterPlaceholder">
+                    <span class="placeholder-bow" id="placeholderIcon">🎀</span>
+                    <span class="placeholder-text" id="placeholderText">Pick a timer!</span>
+                </div>
+            </div>
+
+            <!-- Digital Time Display -->
+            <div class="time-display" id="timeDisplay">00:00</div>
+        </div>
+
+        <!-- Particle container for celebrations -->
+        <div class="particles" id="particles"></div>
+
+        <!-- Preset Buttons -->
+        <div class="presets">
+            <button class="preset-btn" data-minutes="5" data-theme="baking">
+                <span class="preset-icon">🍪</span>
+                <span class="preset-label">5 min</span>
+            </button>
+            <button class="preset-btn" data-minutes="10" data-theme="painting">
+                <span class="preset-icon">🎨</span>
+                <span class="preset-label">10 min</span>
+            </button>
+            <button class="preset-btn" data-minutes="15" data-theme="gardening">
+                <span class="preset-icon">🌸</span>
+                <span class="preset-label">15 min</span>
+            </button>
+            <button class="preset-btn" data-minutes="25" data-theme="reading">
+                <span class="preset-icon">📖</span>
+                <span class="preset-label">25 min</span>
+            </button>
+            <button class="preset-btn" data-minutes="0" data-theme="custom">
+                <span class="preset-icon">⏱️</span>
+                <span class="preset-label">Custom</span>
+            </button>
+        </div>
+
+        <!-- Custom Duration Input -->
+        <div class="custom-input-container" id="customInput" style="display: none;">
+            <input type="number" id="customMinutes" class="custom-input" 
+                   placeholder="Minutes..." min="1" max="120">
+            <button class="custom-set-btn" id="customSetBtn">Set ♡</button>
+        </div>
+
+        <!-- Controls -->
+        <div class="controls">
+            <button class="control-btn start-btn" id="startBtn">Start</button>
+            <button class="control-btn pause-btn" id="pauseBtn" disabled>Pause</button>
+            <button class="control-btn reset-btn" id="resetBtn" disabled>Reset</button>
+        </div>
+
+        <!-- Status Message -->
+        <div class="status" id="status">Pick a timer to start! ♡</div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
