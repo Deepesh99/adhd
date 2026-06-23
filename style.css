@@ -260,6 +260,21 @@ body {
 .theme-reading.ring-stage-3 .timer-card { background: #fff7e6; }
 .theme-reading.ring-stage-4 .timer-card { background: #fff3d6; }
 
+/* ===== PRESET SECTION (slidable) ===== */
+.presets-section {
+    max-height: 200px;
+    overflow: hidden;
+    transition: max-height 0.4s ease, opacity 0.3s ease, margin 0.4s ease;
+    opacity: 1;
+    margin-bottom: 10px;
+}
+
+.presets-section.hidden {
+    max-height: 0;
+    opacity: 0;
+    margin-bottom: 0;
+}
+
 /* ===== PRESET BUTTONS ===== */
 .presets {
     display: flex;
